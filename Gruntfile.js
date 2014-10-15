@@ -45,67 +45,6 @@ module.exports = function (grunt) {
       }
     },
 
-    copy: {
-      bootstrap: {
-        files: [
-          {
-            expand:true, flatten: true,
-            src: '<%= variables.build.bowerBootstrap %>',
-            dest: '<%= variables.build.bootstrapDest %>'
-          }
-        ]
-      },
-      mixins: {
-        files: [
-          {
-            expand:true, flatten: true,
-            src: '<%= variables.build.bowerMixins %>',
-            dest: '<%= variables.build.mixinsDest %>'
-          }
-        ]
-      },
-      jquery: {
-        files: [
-          {
-            expand:true, flatten:true,
-            src: '<%= variables.build.bowerJquery %>',
-            dest: '<%= variables.build.jqueryDest %>'
-          }
-        ]
-      },
-      branding: {
-        files: [
-          {
-            expand:true, flatten:true,
-            src: '<%= variables.build.brandingSrc %>',
-            dest: '<%= variables.build.brandingDest %>'
-          }
-        ]
-      },
-      sourceSans: {
-        files: [
-          {
-             expand:true, flatten:true,
-             src: '<%= variables.build.sourceSansSrc %>',
-             dest: '<%= variables.build.sourceSansDest %>'
-          }
-        ]
-      },
-      oswald: {
-        files: [
-          {
-            expand:true, flatten:true,
-            src: '<%= variables.build.oswaldSrc %>',
-            dest: '<%= variables.build.oswaldDest %>'
-          }
-        ]      
-      }
-    },
-
-    clean: [
-      "<%= variables.build.cleanFolders %>"
-    ],
-
     jshint: {
       files: {
         src: '<%= variables.debug.js %>'
@@ -203,6 +142,12 @@ module.exports = function (grunt) {
         "outputFile": "<%= variables.release.modernizr %>",
         "parseFiles": true
       }
+    },
+
+    wiredep: {
+      sass: {
+        src: ['scss/site.scss'],
+      }
     }
 
   });
@@ -219,7 +164,7 @@ module.exports = function (grunt) {
    grunt.registerTask('git', function() {
     var exec = require('child_process').exec;
         var cb = this.async();
-        exec('git clone https://github.com/unumux/UI-Framework', function(err, stdout, stderr) {
+        exec('git clone https://github.com/unumux/colonial-branding', function(err, stdout, stderr) {
             console.log(stdout);
             cb();
         });
@@ -227,7 +172,6 @@ module.exports = function (grunt) {
 
   // Pull in the plugins
   grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-modernizr');
@@ -235,8 +179,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-uncss');
   grunt.loadNpmTasks('grunt-browser-sync');
+  grunt.loadNpmTasks('grunt-wiredep');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-clean');
 
   grunt.registerTask("default", function () {
     grunt.log.writeln("\r\n - \x1b[97mGRUNT COMMANDS\x1b[39;49m -------------------------------------------------------------\r\n");
