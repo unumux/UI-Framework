@@ -145,8 +145,8 @@ module.exports = function (grunt) {
     },
 
     wiredep: {
-      sass: {
-        src: ['scss/site.scss'],
+      sass: { 
+        src: ['scss/site.scss']
       }
     }
 
@@ -164,7 +164,7 @@ module.exports = function (grunt) {
    grunt.registerTask('git', function() {
     var exec = require('child_process').exec;
         var cb = this.async();
-        exec('git clone https://github.com/unumux/colonial-branding', function(err, stdout, stderr) {
+        exec('git clone https://github.com/unumux/colonial-branding bower_components/colonial-branding', function(err, stdout, stderr) {
             console.log(stdout);
             cb();
         });
@@ -204,7 +204,7 @@ module.exports = function (grunt) {
     grunt.log.writeln("   grunt \x1b[93mcaptain_hook:release\x1b[39;49m - link page to release version of javascript and CSS");
   });
 
-  grunt.registerTask('build', ['bower', 'git', 'copy', 'clean', 'sass:dev', 'captain_hook:debug']);
+  grunt.registerTask('build', ['git', 'bower', 'copy', 'clean', 'sass:dev', 'captain_hook:debug']);
   grunt.registerTask('debug', ['captain_hook:debug', 'browserSync', 'watch']);
   grunt.registerTask('dev', ['sass:dev', 'uncss:dev', 'captain_hook:dev']);
   grunt.registerTask('release', ['concat:dev', "uglify", 'sass:release', 'uncss:release', 'captain_hook:release']);
