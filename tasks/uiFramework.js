@@ -46,67 +46,6 @@ module.exports = function (grunt) {
       }
     },
 
-    copy: {
-      bootstrap: {
-        files: [
-          {
-            expand:true, flatten: true,
-            src: '<%= uiFramework.build.bowerBootstrap %>',
-            dest: '<%= uiFramework.build.bootstrapDest %>'
-          }
-        ]
-      },
-      mixins: {
-        files: [
-          {
-            expand:true, flatten: true,
-            src: '<%= uiFramework.build.bowerMixins %>',
-            dest: '<%= uiFramework.build.mixinsDest %>'
-          }
-        ]
-      },
-      jquery: {
-        files: [
-          {
-            expand:true, flatten:true,
-            src: '<%= uiFramework.build.bowerJquery %>',
-            dest: '<%= uiFramework.build.jqueryDest %>'
-          }
-        ]
-      },
-      branding: {
-        files: [
-          {
-            expand:true, flatten:true,
-            src: '<%= uiFramework.build.brandingSrc %>',
-            dest: '<%= uiFramework.build.brandingDest %>'
-          }
-        ]
-      },
-      sourceSans: {
-        files: [
-          {
-             expand:true, flatten:true,
-             src: '<%= uiFramework.build.sourceSansSrc %>',
-             dest: '<%= uiFramework.build.sourceSansDest %>'
-          }
-        ]
-      },
-      oswald: {
-        files: [
-          {
-            expand:true, flatten:true,
-            src: '<%= uiFramework.build.oswaldSrc %>',
-            dest: '<%= uiFramework.build.oswaldDest %>'
-          }
-        ]      
-      }
-    },
-
-    clean: [
-      "<%= uiFramework.build.cleanFolders %>"
-    ],
-
     jshint: {
       files: {
         src: '<%= uiFramework.debug.js %>'
@@ -204,6 +143,12 @@ module.exports = function (grunt) {
         "outputFile": "<%= uiFramework.release.modernizr %>",
         "parseFiles": true
       }
+    },
+
+    wiredep: {
+      sass: { 
+        src: ['scss/site.scss']
+      }
     }
 
   });
@@ -220,7 +165,7 @@ module.exports = function (grunt) {
    grunt.registerTask('git', function() {
     var exec = require('child_process').exec;
         var cb = this.async();
-        exec('git clone https://github.com/unumux/UI-Framework', function(err, stdout, stderr) {
+        exec('git clone https://github.com/unumux/colonial-branding bower_components/colonial-branding', function(err, stdout, stderr) {
             console.log(stdout);
             cb();
         });
@@ -230,7 +175,6 @@ module.exports = function (grunt) {
 
   // Pull in the plugins
   grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-modernizr');
@@ -238,8 +182,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-uncss');
   grunt.loadNpmTasks('grunt-browser-sync');
+  grunt.loadNpmTasks('grunt-wiredep');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-clean');
 
 
   grunt.registerTask("default", function () {
@@ -264,7 +208,7 @@ module.exports = function (grunt) {
     grunt.log.writeln("   grunt \x1b[93mcaptain_hook:release\x1b[39;49m - link page to release version of javascript and CSS");
   });
 
-  grunt.registerTask('build', ['bower', 'git', 'copy', 'clean', 'sass:dev', 'captain_hook:debug']);
+  grunt.registerTask('build', ['git', 'bower', 'copy', 'clean', 'sass:dev', 'captain_hook:debug']);
   grunt.registerTask('debug', ['captain_hook:debug', 'browserSync', 'watch']);
   grunt.registerTask('dev', ['sass:dev', 'uncss:dev', 'captain_hook:dev']);
   grunt.registerTask('release', ['concat:dev', "uglify", 'sass:release', 'uncss:release', 'captain_hook:release']);
