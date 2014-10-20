@@ -56,14 +56,7 @@ module.exports = function (grunt) {
       dev: {
         options: {
           ignore: [
-            /js.*/,
-            /active.*/,
-            /left.*/,
-            /right.*/,
-            /prev.*/,
-            /next.*/,
-            '.has-success',
-            '.has-error'
+            /js.*/
           ]
         },
         files: {
@@ -74,14 +67,7 @@ module.exports = function (grunt) {
       release: {
         options: {
           ignore: [
-            /js.*/,
-            /active.*/,
-            /left.*/,
-            /right.*/,
-            /prev.*/,
-            /next.*/,
-            '.has-success',
-            '.has-error'
+            /js.*/
           ],
           report: 'min'
         },
@@ -219,8 +205,8 @@ module.exports = function (grunt) {
     grunt.log.writeln("   grunt \x1b[93mcaptain_hook:release\x1b[39;49m - link page to release version of javascript and CSS");
   });
 
-  grunt.registerTask('build', ['git', 'bower', 'copy', 'clean', 'sass:dev', 'captain_hook:debug']);
-  grunt.registerTask('debug', ['captain_hook:debug', 'browserSync', 'watch']);
+  grunt.registerTask('build', ['git', 'bower', 'copy', 'clean', 'wiredep', 'sass:dev', 'captain_hook:debug']);
+  grunt.registerTask('debug', ['wiredep', 'captain_hook:debug', 'browserSync', 'watch']);
   grunt.registerTask('dev', ['sass:dev', 'autoprefixer', 'uncss:dev', 'captain_hook:dev']);
   grunt.registerTask('release', ['concat:dev', "uglify", 'sass:release', 'autoprefixer', 'uncss:release', 'captain_hook:release']);
 
