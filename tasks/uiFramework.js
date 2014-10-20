@@ -149,6 +149,16 @@ module.exports = function (grunt) {
       sass: { 
         src: ['scss/site.scss']
       }
+    },
+
+    autoprefixer: {
+      options: {
+        browsers: ['last 2 versions', 'ie 8', 'ie 9']
+      },
+      your_target: {
+        src: '<%= uiFramework.dev.css %>',
+        dest: '<%= uiFramework.dev.css %>'
+      }      
     }
 
   });
@@ -184,6 +194,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-wiredep');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-autoprefixer');
 
 
   grunt.registerTask("default", function () {
@@ -210,8 +221,8 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', ['git', 'bower', 'copy', 'clean', 'sass:dev', 'captain_hook:debug']);
   grunt.registerTask('debug', ['captain_hook:debug', 'browserSync', 'watch']);
-  grunt.registerTask('dev', ['sass:dev', 'uncss:dev', 'captain_hook:dev']);
-  grunt.registerTask('release', ['concat:dev', "uglify", 'sass:release', 'uncss:release', 'captain_hook:release']);
+  grunt.registerTask('dev', ['sass:dev', 'autoprefixer', 'uncss:dev', 'captain_hook:dev']);
+  grunt.registerTask('release', ['concat:dev', "uglify", 'sass:release', 'autoprefixer', 'uncss:release', 'captain_hook:release']);
 
 
 };
