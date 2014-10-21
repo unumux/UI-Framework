@@ -92,11 +92,12 @@ module.exports = function (grunt) {
 
     watch: {
       options: {
-        livereload: true
+        livereload: true,
+        spawn: false
       },
       css: {
         files: '<%= uiFramework.watch.scss %>',
-        tasks: ['sass:dev']
+        tasks: ['autoprefixer', 'sass:dev']
       },
       js: {
         files: '<%= uiFramework.watch.js %>',
@@ -132,6 +133,9 @@ module.exports = function (grunt) {
     },
 
     wiredep: {
+      options: {
+        exclude: /bootstrap-sass-official/
+      },
       sass: { 
         src: ['scss/site.scss']
       }
@@ -186,7 +190,7 @@ module.exports = function (grunt) {
   grunt.registerTask("default", function () {
     grunt.log.writeln("\r\n - \x1b[97mGRUNT COMMANDS\x1b[39;49m -------------------------------------------------------------\r\n");
     grunt.log.writeln("   grunt \x1b[93mwatch\x1b[39;49m - Watch scss");
-    grunt.log.writeln("   grunt \x1b[93mbuild\x1b[39;49m - Build the initial files and installs Bower/Branding components");
+    grunt.log.writeln("   grunt \x1b[93msetup\x1b[39;49m - Setup the initial files and installs Bower/Branding components");
     grunt.log.writeln("   grunt \x1b[93mdebug\x1b[39;49m - Build for the debug environment");
     grunt.log.writeln("   grunt \x1b[93mdev\x1b[39;49m - Build the dev files");
     grunt.log.writeln("   grunt \x1b[93mrelease\x1b[39;49m - Build the release files");
@@ -205,11 +209,9 @@ module.exports = function (grunt) {
     grunt.log.writeln("   grunt \x1b[93mcaptain_hook:release\x1b[39;49m - link page to release version of javascript and CSS");
   });
 
-  grunt.registerTask('build', ['git', 'bower', 'copy', 'clean', 'wiredep', 'sass:dev', 'captain_hook:debug']);
+  grunt.registerTask('setup', ['git', 'bower', 'copy', 'clean', 'wiredep', 'sass:dev', 'captain_hook:debug']);
   grunt.registerTask('debug', ['wiredep', 'captain_hook:debug', 'browserSync', 'watch']);
   grunt.registerTask('dev', ['sass:dev', 'autoprefixer', 'uncss:dev', 'captain_hook:dev']);
   grunt.registerTask('release', ['concat:dev', "uglify", 'sass:release', 'autoprefixer', 'uncss:release', 'captain_hook:release']);
-
-
 };
 
