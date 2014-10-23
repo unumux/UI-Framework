@@ -97,7 +97,7 @@ module.exports = function (grunt) {
       },
       css: {
         files: '<%= uiFramework.watch.scss %>',
-        tasks: ['autoprefixer', 'sass:dev']
+        tasks: ['sass:dev', 'autoprefixer']
       },
       js: {
         files: '<%= uiFramework.watch.js %>',
