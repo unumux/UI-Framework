@@ -1,0 +1,46 @@
+{
+  "build": {
+    "sourceSansSrc": "UI-Framework/fonts/sourceSansPro/*",
+    "sourceSansDest": "fonts/sourceSansPro/",
+    "oswaldSrc": "UI-Framework/fonts/oswald/*",
+    "oswaldDest": "fonts/oswald/",
+    "cleanFolders": [
+      "bower_components",
+      "UI-Framework"
+    ]
+  },
+  "watch": {
+    "scss": [
+      "scss/*.scss"
+    ],
+    "js": [
+      "js/*.js"
+    ],
+    "html": [
+      "*.html"
+    ]
+  },
+  "debug": {
+    "js": [
+      "js/script-agile.js"
+    ],
+    "jsSource": [],
+    "jsPath": [
+      "//localhost:35729/livereload.js"
+    ],
+    "cssPath": "css/site.css",
+    "proxy": "localhost:",
+    "masterLayout": "index.html"
+  },
+  "dev": {
+    "scss": "scss/site.scss",
+    "css": "css/site.css"
+  },
+  "release": {
+    "js": "js/site.min.js",
+    "jsPath": "Scripts/site.min.js",
+    "css": "css/site.min.css",
+    "cssPath": "css/site.min.css",
+    "modernizr": "js/modernizr/modernizr-custom.js"
+  }
+}

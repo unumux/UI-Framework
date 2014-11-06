@@ -44,8 +44,4 @@ Temporary Items
 
 bower_components/
 node_modules/
-css/site.css
-Content/css/site.min.css
-*.log
-scss/site.scss
-bower.json
+scss/

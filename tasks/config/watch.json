@@ -1,0 +1,28 @@
+{
+  "options": {
+    "livereload": true
+  },
+  "css": {
+    "files": "<%= uiFramework.watch.scss %>",
+    "tasks": [
+      "sass:dev"
+    ]
+  },
+  "js": {
+    "files": "<%= uiFramework.watch.js %>",
+    "tasks": [
+      "modernizr"
+    ],
+    "options": {
+      "livereload": true
+    }
+  },
+  "html": {
+    "files": [
+      "<%= uiFramework.watch.html %>"
+    ],
+    "options": {
+      "livereload": true
+    }
+  }
+}

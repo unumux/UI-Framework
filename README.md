@@ -60,9 +60,9 @@ This will set up the framework with default paths. To learn more about configuri
 
 Shows a list of all of the commands including the advanced commands.
 
-**grunt setup**
+**grunt build**
 
-Sets up the bower components/libraries, pulls the branding files from github, copies the files to the correct directories, cleans out unnecessary files, compiles the css file for the first time, and sets the css/js paths for the initial environment. This should be only ran once at the beginning of a project. 
+Builds out the bower components/libraries, pulls the branding files from github, copies the files to the correct directories, cleans out unnecessary files, compiles the css file for the first time, and sets the css/js paths for the initial environment. 
 
 **grunt watch**
 

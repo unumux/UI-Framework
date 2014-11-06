@@ -1,0 +1,37 @@
+{
+  "dev": {
+    "options": {
+      "ignore": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        ".has-success",
+        ".has-error"
+      ]
+    },
+    "files": {
+      "<%= uiFramework.dev.css %>": "<%= uiFramework.dev.html %>"
+    }
+  },
+  "release": {
+    "options": {
+      "ignore": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        ".has-success",
+        ".has-error"
+      ],
+      "report": "min"
+    },
+    "files": {
+      "<%= uiFramework.release.css %>": "<%= uiFramework.dev.html %>"
+    }
+  }
+}

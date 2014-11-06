@@ -1,0 +1,9 @@
+{
+  "name": "UI-Framework",
+  "version": "0.0.0",
+  "license": "MIT",
+  "dependencies": {
+  	"jquery": "1.11.1",
+  	"colonial-branding" : "1.0.0"
+  }
+}

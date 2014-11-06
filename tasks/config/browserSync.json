@@ -1,0 +1,9 @@
+{
+  "bsfiles": {
+    "src": "<%= uiFramework.debug.cssPath %>"
+  },
+  "options": {
+    "proxy": "<%= uiFramework.debug.proxy %>",
+    "watchTask": true
+  }
+}
