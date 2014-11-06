@@ -97,7 +97,7 @@ module.exports = function (grunt) {
       },
       css: {
         files: '<%= uiFramework.watch.scss %>',
-        tasks: ['sass:dev', 'autoprefixer']
+        tasks: ['sass_injection', 'sass:dev', 'autoprefixer']
       },
       js: {
         files: '<%= uiFramework.watch.js %>',
@@ -141,6 +141,13 @@ module.exports = function (grunt) {
       }
     },
 
+    sass_injection: {
+      your_target: {
+        target: 'scss/site.scss',
+        src: ['scss/*.scss']
+      }
+    },
+
     autoprefixer: {
       options: {
         browsers: ['last 2 versions', 'ie 8', 'ie 9']
@@ -179,6 +186,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-modernizr');
   grunt.loadNpmTasks('grunt-captain-hook');
+  grunt.loadNpmTasks('grunt-sass-injection');  
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-uncss');
   grunt.loadNpmTasks('grunt-browser-sync');
@@ -200,7 +208,6 @@ module.exports = function (grunt) {
     grunt.log.writeln("   grunt \x1b[93msass:dev\x1b[39;49m - Compile scss files");
     grunt.log.writeln("   grunt \x1b[93msass:release\x1b[39;49m - Minify  compiled CSS file");
     grunt.log.writeln("   grunt \x1b[93mcopy\x1b[39;49m - Copy files from Bower Components to MVC file structure");
-    grunt.log.writeln("   grunt \x1b[93mclean\x1b[39;49m - Delete the Bower components folder");
     grunt.log.writeln("   grunt \x1b[93mjshint\x1b[39;49m - Run jslint for javascript errors");
     grunt.log.writeln("   grunt \x1b[93muncss:dev\x1b[39;49m - Remove unused css styles");
     grunt.log.writeln("   grunt \x1b[93muncss:release\x1b[39;49m - Remove unused css styles");
@@ -209,7 +216,7 @@ module.exports = function (grunt) {
     grunt.log.writeln("   grunt \x1b[93mcaptain_hook:release\x1b[39;49m - link page to release version of javascript and CSS");
   });
 
-  grunt.registerTask('setup', ['git', 'bower', 'copy', 'clean', 'wiredep', 'sass:dev', 'captain_hook:debug']);
+  grunt.registerTask('setup', ['wiredep', 'sass_injection', 'sass:dev', 'captain_hook:debug']);
   grunt.registerTask('debug', ['wiredep', 'captain_hook:debug', 'browserSync', 'watch']);
   grunt.registerTask('dev', ['sass:dev', 'autoprefixer', 'uncss:dev', 'captain_hook:dev']);
   grunt.registerTask('release', ['concat:dev', "uglify", 'sass:release', 'autoprefixer', 'uncss:release', 'captain_hook:release']);
