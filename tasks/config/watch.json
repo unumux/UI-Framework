@@ -10,15 +10,15 @@
      "autoprefixer:dev"
     ]
   },
-  "js": {
-    "files": "<%= uiFramework.watch.js %>",
-    "tasks": [
-      "modernizr"
-    ],
-    "options": {
-      "livereload": true
-    }
-  },
+  // "js": {
+  //   "files": "<%= uiFramework.watch.js %>",
+  //   "tasks": [
+  //     "modernizr"
+  //   ],
+  //   "options": {
+  //     "livereload": true
+  //   }
+  // },
   "html": {
     "files": [
       "<%= uiFramework.watch.html %>"
