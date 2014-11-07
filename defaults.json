@@ -1,18 +1,9 @@
 {
-	"build": {
-		"bowerJquery": "bower_components/jquery/dist/*.js",
-		"jqueryDest": "js/jquery/",
-		"bowerBootstrap": "bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/*",
-		"bootstrapDest": "Content/scss/bootstrap/",
-		"bowerMixins" : "bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/*",
-		"mixinsDest": "Content/scss/bootstrap/mixins/",
-		"brandingSrc": "UI-Framework/scss/branding/*",
-		"brandingDest": "Content/scss/branding/",
+	"setup": {
 		"sourceSansSrc": "UI-Framework/fonts/sourceSansPro/*",
 		"sourceSansDest": "fonts/sourceSansPro/",
 		"oswaldSrc": "UI-Framework/fonts/oswald/*",
 		"oswaldDest": "fonts/oswald/",
-		"cleanFolders": ["bower_components", "UI-Framework"]
 	},
 
 	"watch": {
@@ -30,7 +21,6 @@
 			"//localhost:35729/livereload.js"
     	],
     	"cssPath" : "css/site.css",
-    	"proxy" : "localhost:",
     	"masterLayout" : "index.html"
 	},
 

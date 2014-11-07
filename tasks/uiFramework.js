@@ -36,8 +36,8 @@ module.exports = function (grunt) {
     require('./modules/help.js')(grunt)
   });
 
-  grunt.registerTask('build', ['wiredep', 'sass_injection', 'sass:dev', 'captain_hook:debug']);
-  grunt.registerTask('debug', ['wiredep', 'sass_injection', 'captain_hook:debug', 'browserSync', 'watch']);
+  //grunt.registerTask('build', ['wiredep', 'sass_injection', 'sass:dev', 'captain_hook:debug']);
+  grunt.registerTask('debug', ['wiredep', 'sass_injection', 'sass:dev', 'captain_hook:debug', 'browserSync', 'watch']);
   grunt.registerTask('dev', ['sass:dev', 'autoprefixer', 'uncss:dev', 'captain_hook:dev']);
   grunt.registerTask('release', ['concat:dev', "uglify", 'sass:release', 'autoprefixer', 'uncss:release', 'captain_hook:release']);
 

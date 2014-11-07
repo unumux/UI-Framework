@@ -5,7 +5,9 @@
   "css": {
     "files": "<%= uiFramework.watch.scss %>",
     "tasks": [
-      "sass:dev"
+     "sass_injection",
+     "sass:dev",
+     "autoprefixer:dev"
     ]
   },
   "js": {

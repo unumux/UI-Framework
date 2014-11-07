@@ -1,13 +1,9 @@
 {
-  "build": {
+  "setup": {
     "sourceSansSrc": "UI-Framework/fonts/sourceSansPro/*",
     "sourceSansDest": "fonts/sourceSansPro/",
     "oswaldSrc": "UI-Framework/fonts/oswald/*",
     "oswaldDest": "fonts/oswald/",
-    "cleanFolders": [
-      "bower_components",
-      "UI-Framework"
-    ]
   },
   "watch": {
     "scss": [
@@ -29,7 +25,6 @@
       "//localhost:35729/livereload.js"
     ],
     "cssPath": "css/site.css",
-    "proxy": "localhost:",
     "masterLayout": "index.html"
   },
   "dev": {
@@ -38,7 +33,7 @@
   },
   "release": {
     "js": "js/site.min.js",
-    "jsPath": "Scripts/site.min.js",
+    "jsPath": "js/site.min.js",
     "css": "css/site.min.css",
     "cssPath": "css/site.min.css",
     "modernizr": "js/modernizr/modernizr-custom.js"
