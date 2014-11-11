@@ -1,24 +1,22 @@
 var help = {
   "GRUNT COMMANDS": {
-    "watch": "Watch scss",
-    "build": "Build the initial files and installs Bower/Branding components",
+    "watch": "Watch scss and html",
     "debug": "Build for the debug environment",
     "dev": "Build the dev files",
     "release": "Build the release files"
   },
   "GRUNT COMMANDS (ADVANCED)": {
-    "bower": "Install bower dependencies",
-    "git": "Clone UI-Framework from github",
     "sass:dev": "Compile scss files",
     "sass:release": "Minify  compiled CSS file",
-    "copy": "Copy files from Bower Components to MVC file structure",
-    "clean": "Delete the Bower components folder",
-    "jshint": "Run jslint for javascript errors",
+    "wiredep": "Insert bower component scss imports",
+    "sass_injection": "Insert imports for local scss files",
+    "jshint": "Run jslint for js errors",
+    "concat": "Concatenate js files"
     "uncss:dev": "Remove unused css styles",
     "uncss:release": "Remove unused css styles",
     "captain_hook:debug": "link page to debug version of the files",
-    "captain_hook:dev": "link page to dev version of javascript and CSS",
-    "captain_hook:release": "link page to release version of javascript and CSS"
+    "captain_hook:dev": "link page to dev version of js and CSS",
+    "captain_hook:release": "link page to release version of js and CSS"
   }
 }
 

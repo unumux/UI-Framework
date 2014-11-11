@@ -3,7 +3,7 @@
     "sourceSansSrc": "UI-Framework/fonts/sourceSansPro/*",
     "sourceSansDest": "fonts/sourceSansPro/",
     "oswaldSrc": "UI-Framework/fonts/oswald/*",
-    "oswaldDest": "fonts/oswald/",
+    "oswaldDest": "fonts/oswald/"
   },
   "watch": {
     "scss": [

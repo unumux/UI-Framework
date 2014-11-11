@@ -7,18 +7,9 @@
     "tasks": [
      "sass_injection",
      "sass:dev",
-     "autoprefixer:dev"
+     "autoprefixer"
     ]
   },
-  // "js": {
-  //   "files": "<%= uiFramework.watch.js %>",
-  //   "tasks": [
-  //     "modernizr"
-  //   ],
-  //   "options": {
-  //     "livereload": true
-  //   }
-  // },
   "html": {
     "files": [
       "<%= uiFramework.watch.html %>"
