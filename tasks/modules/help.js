@@ -11,7 +11,7 @@ var help = {
     "wiredep": "Insert bower component scss imports",
     "sass_injection": "Insert imports for local scss files",
     "jshint": "Run jslint for js errors",
-    "concat": "Concatenate js files"
+    "concat": "Concatenate js files",
     "uncss:dev": "Remove unused css styles",
     "uncss:release": "Remove unused css styles",
     "captain_hook:debug": "link page to debug version of the files",

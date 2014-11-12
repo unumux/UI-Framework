@@ -1,6 +1,7 @@
 {
   "options": {
-    "livereload": true
+    "livereload": true,
+    "spawn": false
   },
   "css": {
     "files": "<%= uiFramework.watch.scss %>",

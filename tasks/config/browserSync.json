@@ -3,7 +3,9 @@
     "src": "<%= uiFramework.debug.cssPath %>"
   },
   "options": {
-    "proxy": "<%= uiFramework.debug.proxy %>",
+    "server": {
+    	"baseDir": "./"
+    },
     "watchTask": true
   }
 }

@@ -2,36 +2,22 @@
   "dev": {
     "options": {
       "ignore": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        ".has-success",
-        ".has-error"
+        "/js.*/"
       ]
     },
     "files": {
-      "<%= uiFramework.dev.css %>": "<%= uiFramework.dev.html %>"
+      "<%= uiFramework.dev.css %>": "<%= uiFramework.watch.html %>"
     }
   },
   "release": {
     "options": {
       "ignore": [
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
-        ".has-success",
-        ".has-error"
+         "/js.*/"
       ],
       "report": "min"
     },
     "files": {
-      "<%= uiFramework.release.css %>": "<%= uiFramework.dev.html %>"
+      "<%= uiFramework.release.css %>": "<%= uiFramework.watch.html %>"
     }
   }
 }
