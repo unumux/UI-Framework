@@ -1,12 +1,12 @@
 {
-  "debug": {
-    "nonull": true,
-    "src": "<%= uiFramework.debug.jsSource %>",
-    "dest": "<%= uiFramework.dev.js %>"
-  },
   "dev": {
     "nonull": true,
     "src": "<%= uiFramework.dev.jsSource %>",
-    "dest": "<%= uiFramework.dev.js %>"
+    "dest": "<%= uiFramework.release.js %>"
+  },
+  "release": {
+    "nonull": true,
+    "src": "<%= uiFramework.dev.jsSource %>",
+    "dest": "<%= uiFramework.release.js %>"
   }
 }
