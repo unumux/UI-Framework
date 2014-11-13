@@ -37,6 +37,7 @@ Open up command line and type in the command of 'npm install -g bower' and let t
 **UI Framework (this)**
 
 Open up command line and type:
+**Please note it is highly reccommended that you use the yeoman generator as instead at it sets up dependencies and files for you. More information can be found on the [generator repo](https://github.com/unumux/generator-unumux).**
 
 ```
 npm i -D unumux/ui-framework 
@@ -60,10 +61,6 @@ This will set up the framework with default paths. To learn more about configuri
 
 Shows a list of all of the commands including the advanced commands.
 
-**grunt build**
-
-Builds out the bower components/libraries, pulls the branding files from github, copies the files to the correct directories, cleans out unnecessary files, compiles the css file for the first time, and sets the css/js paths for the initial environment. 
-
 **grunt watch**
 
 Watches your scss, markup, and javascript files for changes. When a change is detected three actions can occur depending on the file type saved.
@@ -73,12 +70,14 @@ Watches your scss, markup, and javascript files for changes. When a change is de
 
 **grunt debug**
 
-Sets up the debug environment paths for CSS and JS files, runs browser sync, and sets up the watch task. Browser sync allows for other devices on the Unum network to see your changes so long as your computer is on the network and powered on. The IP address for this is typically your computer's IP address at port 3000. Browser Sync also multiple browsers to scroll at the same time without having to tell the non-active browser to scroll and will trigger link click throughs on them as well. 
+Sets up the debug environment paths for CSS and JS files, imports bower components into the main scss file, implements sass immports, runs browser sync, and sets up the watch task. Browser sync allows for other devices on the Unum network to see your changes so long as your computer is on the network and powered on. The IP address for this is typically your computer's IP address at port 3000. Browser Sync also multiple browsers to scroll at the same time without having to tell the non-active browser to scroll and will trigger link click throughs on them as well. 
 
 **grunt dev**
 
-Compiles the site.css files and the site.js file.  Also changes the css and js path to point to the non-minified files.  (this task needs to be called at the beginning of each iteration right after a deployment has gone through).  In the application version of the Ui Framework it will also use uncss to remove any unused css styles from your css file.  
+Compiles the site.css files and the site.js file.  Also changes the css and js path to point to the non-minified files.  (this task needs to be called at the end of an iteration/sprint before a deployment).  This also runs autoprefixer and uncss to preen your css and to add browser prefixes to css properties.  
 
 **grunt release**
 
-Compiles the production build files of site.min.js and site.min.css.  Changes the css and js paths to point to the minified version of the files.  (this needs to be called at the end of an iteration before your project is deployed to the servers).
+Compiles the production build files of site.min.js and site.min.css.  Changes the css and js paths to point to the minified version of the files.  (this needs to be called at the end of an iteration before your project is deployed to the servers). This also runs autoprefixer and uncss to preen your css and to add browser prefixes to css properties.  
+
+More in-depth information about the UI-Framework and its commands can be found on the [wiki page](https://github.com/unumux/UI-Framework/wiki). 
