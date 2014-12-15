@@ -16,7 +16,8 @@ var help = {
     "uncss:release": "Remove unused css styles",
     "captain_hook:debug": "link page to debug version of the files",
     "captain_hook:dev": "link page to dev version of js and CSS",
-    "captain_hook:release": "link page to release version of js and CSS"
+    "captain_hook:release": "link page to release version of js and CSS",
+    "copy": "copy fonts to proper place in directory structure"
   }
 }
 

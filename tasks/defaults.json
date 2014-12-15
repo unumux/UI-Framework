@@ -1,8 +1,8 @@
 {
   "setup": {
-    "sourceSansSrc": "UI-Framework/fonts/sourceSansPro/*",
+    "sourceSansSrc": "bower_components/colonial-branding/fonts/sourceSansPro/*",
     "sourceSansDest": "fonts/sourceSansPro/",
-    "oswaldSrc": "UI-Framework/fonts/oswald/*",
+    "oswaldSrc": "bower_components/colonial-branding/fonts/oswald/*",
     "oswaldDest": "fonts/oswald/"
   },
   "watch": {

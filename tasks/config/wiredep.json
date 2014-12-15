@@ -1,10 +1,23 @@
 {
   "sass": {
-  	"options": {
-  		"exclude":  "bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap.scss"
-  	},
+    "options": {
+      "exclude":  [
+      "bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap.scss",
+      "bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss"
+      ]
+    },
     "src": [
       "scss/site.scss"
+    ]
+  },
+  "js": {
+    "options": {
+      "exclude": [
+        "/bootstrap-sass-official/"
+      ]
+    },
+    "src": [
+      "index.html"
     ]
   }
 }

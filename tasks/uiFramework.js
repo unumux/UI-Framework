@@ -19,6 +19,7 @@ module.exports = function (grunt) {
 
   // Pull in the plugins
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-modernizr');
@@ -36,7 +37,7 @@ module.exports = function (grunt) {
     require('./modules/help.js')(grunt)
   });
 
-  //grunt.registerTask('build', ['wiredep', 'sass_injection', 'sass:dev', 'captain_hook:debug']);
+  grunt.registerTask('build', ['wiredep', 'sass_injection', 'sass:dev', 'captain_hook:debug', 'copy']);
   grunt.registerTask('debug', ['wiredep', 'sass_injection', 'sass:dev', 'captain_hook:debug', 'browserSync', 'watch']);
   grunt.registerTask('dev', ['sass:dev', 'autoprefixer', 'uncss:dev']);
   grunt.registerTask('release', ['concat:release', 'uglify', 'sass:release', 'autoprefixer', 'uncss:release', 'captain_hook:release']);

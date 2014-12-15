@@ -1,0 +1,10 @@
+{
+	"sourceSans": {
+		"src": "<%= uiFramework.setup.sourceSansSrc %>",
+		"dest": "<%= uiFramework.setup.sourceSansDest %>"
+	},
+	"oswald": {
+		"src": "<%= uiFramework.setup.oswaldSrc %>",
+		"dest": "<%= uiFramework.setup.oswaldDest %>"
+	}
+}
