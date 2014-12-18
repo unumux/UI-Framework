@@ -18,10 +18,9 @@
   },
   "debug": {
     "js": [
-      "js/script-agile.js"
+      "js/site.js"
     ],
     "jsPath": [
-      "//localhost:35729/livereload.js",
       "bower_components/jquery/dist/jquery.min.js"
     ],
     "cssPath": "css/site.css",

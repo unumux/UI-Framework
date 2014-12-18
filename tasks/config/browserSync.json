@@ -1,6 +1,10 @@
 {
   "bsfiles": {
-    "src": "<%= uiFramework.debug.cssPath %>"
+    "src": [
+      "<%= uiFramework.debug.cssPath %>",
+      "<%= uiFramework.watch.html %>",
+      "<%= uiFramework.watch.js %>"
+    ]
   },
   "options": {
     "server": {
