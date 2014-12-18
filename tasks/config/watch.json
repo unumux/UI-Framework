@@ -18,5 +18,9 @@
     "options": {
       "livereload": true
     }
+  },
+  "grunt": {
+    "files": ["Gruntfile.js", "node_modules/uiFramework/tasks/**/*"],
+    "options": { "reload": true }
   }
 }
