@@ -6,6 +6,8 @@
   },
   "main": "index.js",
   "dependencies": {
+    "grunt-browserify": "^3.2.1",
+    "load-grunt-configs": "^0.4.1",
     "lodash": "^2.4.1"
   },
   "peerDependencies": {

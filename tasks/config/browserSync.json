@@ -3,7 +3,7 @@
     "src": [
       "<%= uiFramework.debug.cssPath %>",
       "<%= uiFramework.watch.html %>",
-      "<%= uiFramework.watch.js %>"
+      "<%= uiFramework.debug.jsBundle %>"
     ]
   },
   "options": {

@@ -30,6 +30,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-sass-injection');
   grunt.loadNpmTasks('grunt-autoprefixer');
+  grunt.loadNpmTasks('grunt-browserify');
 
 
   grunt.registerTask("default", function () {
@@ -37,7 +38,7 @@ module.exports = function (grunt) {
   });
 
   //grunt.registerTask('build', ['wiredep', 'sass_injection', 'sass:dev', 'captain_hook:debug']);
-  grunt.registerTask('debug', ['wiredep', 'sass_injection', 'sass:dev', 'captain_hook:debug', 'browserSync', 'watch']);
+  grunt.registerTask('debug', ['browserify', 'wiredep', 'sass_injection', 'sass:dev', 'captain_hook:debug', 'browserSync', 'watch']);
   grunt.registerTask('dev', ['sass:dev', 'autoprefixer', 'uncss:dev']);
   grunt.registerTask('release', ['concat:release', 'uglify', 'sass:release', 'autoprefixer', 'uncss:release', 'captain_hook:release']);
 

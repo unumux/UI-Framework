@@ -20,6 +20,7 @@
     "js": [
       "js/site.js"
     ],
+    "jsBundle": "js/bundle.js",
     "jsPath": [
       "bower_components/jquery/dist/jquery.min.js"
     ],
