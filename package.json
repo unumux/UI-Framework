@@ -6,6 +6,9 @@
   },
   "main": "index.js",
   "dependencies": {
+    "browserify": "^7.0.3",
+    "debowerify": "^1.2.0",
+    "deglobalify": "^0.2.0",
     "grunt-browserify": "^3.2.1",
     "load-grunt-configs": "^0.4.1",
     "lodash": "^2.4.1"

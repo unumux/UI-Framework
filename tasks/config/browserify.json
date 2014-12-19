@@ -3,7 +3,8 @@
     "src": "<%= uiFramework.debug.js %>",
     "dest": "<%= uiFramework.debug.jsBundle %>",
     "options": {
-      "watch": true
+      "watch": true,
+      "transform": ["debowerify", "deglobalify"]
     }
   }
 }
