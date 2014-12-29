@@ -2,6 +2,14 @@
   "dist": {
     "devFile": "<%= uiFramework.dev.modernizr %>",
     "outputFile": "<%= uiFramework.release.modernizr %>",
-    "parseFiles": true
+    "extra": {
+    	"shiv": "true",
+    	"cssclasses": "true",
+    	"load": "true"
+    },
+    "parseFiles": true,
+    "files": {
+    	"src": ["js/*.js", "css/*.css"]
+    }
   }
 }

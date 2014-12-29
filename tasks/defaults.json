@@ -32,7 +32,8 @@
     "css": "css/site.css",
     "jsSource": [
       "bower_components/jquery/dist/jquery.min.js"
-    ]
+    ],
+    "modernizr": "js/modernizr/modernizr.2.7.1.min.js"
   },
   "release": {
     "js": "js/site.min.js",
