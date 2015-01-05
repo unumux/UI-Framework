@@ -37,7 +37,7 @@
   },
   "release": {
     "js": "js/site.min.js",
-    "jsPath": "js/site.min.js",
+    "jsPath": "",
     "css": "css/site.min.css",
     "cssPath": "css/site.min.css",
     "modernizr": "js/modernizr/modernizr-custom.js"

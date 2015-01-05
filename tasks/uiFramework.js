@@ -3,6 +3,7 @@ var _ = require('lodash');
 module.exports = function (grunt) {
   // save users grunt config so we can merge it in later
   var userConfig = grunt.config.get();
+  var destHtml = grunt.file.expand('*.html');
 
   var options = {
     config : {
@@ -16,6 +17,7 @@ module.exports = function (grunt) {
 
   // merge in user's grunt config
   grunt.config.merge(userConfig);
+  
 
   // Pull in the plugins
   grunt.loadNpmTasks('grunt-contrib-concat');
@@ -31,16 +33,18 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-sass-injection');
   grunt.loadNpmTasks('grunt-autoprefixer');
+  grunt.loadNpmTasks('grunt-usemin');
+  grunt.loadNpmTasks('grunt-injector');
 
 
   grunt.registerTask("default", function () {
     require('./modules/help.js')(grunt)
   });
 
-  grunt.registerTask('build', ['wiredep', 'sass_injection', 'sass:dev', 'captain_hook:debug', 'copy']);
-  grunt.registerTask('debug', ['wiredep', 'sass_injection', 'sass:dev', 'captain_hook:debug', 'browserSync', 'watch']);
-  grunt.registerTask('dev', ['sass:dev', 'autoprefixer', 'uncss:dev']);
-  grunt.registerTask('release', ['concat:release', 'uglify', 'sass:release', 'autoprefixer', 'uncss:release', 'captain_hook:release']);
+  grunt.registerTask('build', ['wiredep', 'sass_injection', 'sass:dev', 'injector', 'captain_hook:debug', 'copy', 'modernizr']);
+  grunt.registerTask('debug', ['wiredep', 'sass_injection', 'sass:dev', 'injector', 'captain_hook:debug', 'browserSync', 'watch']);
+  grunt.registerTask('dev', ['sass:dev', 'autoprefixer', 'uncss:dev', 'captain_hook:release', 'modernizr']);
+  grunt.registerTask('release', ['useminPrepare', 'concat', 'uglify', 'usemin', 'sass:release', 'autoprefixer', 'modernizr', 'uncss:release']);
 
 
 };
