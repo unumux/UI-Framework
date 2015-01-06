@@ -17,8 +17,12 @@
     ]
   },
   "debug": {
-    "js": [
-      "js/site.js"
+    "js":[
+      "js/*.js",
+      "js/*/*.js",
+      "!js/modernizr/*.js"
+      "!js/site.js",
+      "!js/site.min.js"
     ],
     "jsBundle": "js/bundle.js",
     "jsPath": [

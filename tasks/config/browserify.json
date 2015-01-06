@@ -1,7 +1,10 @@
 {
   "debug": {
-    "src": "<%= uiFramework.debug.js %>",
-    "dest": "<%= uiFramework.debug.jsBundle %>",
+  	"files": {
+  		"expand": "true",
+ 		"src": "<%= uiFramework.debug.js %>",
+    	"dest": "<%= uiFramework.debug.jsBundle %>"
+  	},
     "options": {
       "watch": true,
       "transform": ["debowerify", "deglobalify"]
