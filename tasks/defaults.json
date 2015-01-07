@@ -20,7 +20,7 @@
     "js":[
       "js/*.js",
       "js/*/*.js",
-      "!js/modernizr/*.js"
+      "!js/modernizr/*.js",
       "!js/site.js",
       "!js/site.min.js"
     ],
