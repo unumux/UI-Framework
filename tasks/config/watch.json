@@ -1,5 +1,6 @@
 {
   "options": {
+    "livereload": true,
     "spawn": false
   },
   "css": {
@@ -10,8 +11,12 @@
      "autoprefixer"
     ]
   },
-  "grunt": {
-    "files": ["Gruntfile.js", "node_modules/uiFramework/tasks/**/*"],
-    "options": { "reload": true }
+  "js": {
+    "files": [
+     "<%= uiFramework.watch.js %>"
+    ],
+    "tasks": [
+      "captain_hook:debug"
+    ]
   }
 }
