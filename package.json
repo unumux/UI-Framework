@@ -8,6 +8,23 @@
   "dependencies": {
     "lodash": "^2.4.1"
   },
+  "peerDependencies": {
+    "grunt": "~0.4.5",
+    "load-grunt-configs": "^0.4.0",
+    "grunt-autoprefixer": "~1.0.1",
+    "grunt-bower-task": "^0.4.0",
+    "grunt-browser-sync": "~1.5.3",
+    "grunt-captain-hook": "~0.3.1",
+    "grunt-contrib-concat": "~0.5.0",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-uglify": "~0.6.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-modernizr": "^0.6.0",
+    "grunt-sass": "~0.15.0",
+    "grunt-sass-injection": "^1.0.1",
+    "grunt-uncss": "~0.3.7",
+    "grunt-wiredep": "^1.9.0"
+  },
   "devDependencies": {
     "grunt": "~0.4.5",
     "grunt-autoprefixer": "~1.0.1",
