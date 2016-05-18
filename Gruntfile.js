@@ -2,9 +2,9 @@
 module.exports = function (grunt) {
   grunt.initConfig({
     uiFramework: {
-      
+
     }
   });
 
-  grunt.loadNpmTasks('uiFramework');
+  grunt.loadNpmTasks('@unumux/ui-framework-legacy');
 }
